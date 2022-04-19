@@ -5,10 +5,15 @@
   "main": "./dist/proguard-retrace.cjs.js",
   "module": "./dist/proguard-retrace.esm.js",
   "types": "./dist/proguard-retrace.d.ts",
+  "files": [
+    "dist/*",
+    "!dist/**/*.tsbuildinfo"
+  ],
   "scripts": {
     "build": "rollup --config",
     "dev": "rollup --config --watch",
-    "test": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
